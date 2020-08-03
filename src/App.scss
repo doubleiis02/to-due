@@ -109,12 +109,16 @@ h1 {
   font-size: 20px;
   margin-bottom: 10px;
   min-width: 480px;
+
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .buttonandcontent {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -147,4 +151,9 @@ h1 {
 
 .editinput {
   margin-bottom: 10px;
+}
+
+#thiseditname {
+  margin-left: 5px;
+  margin-right: 5px;
 }

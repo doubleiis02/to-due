@@ -107,7 +107,7 @@ class Task extends React.Component {
                         <div>
                             {this.changeButton()}
                         </div>
-                        <div>
+                        <div id='thiseditname'>
                             {this.editName()}
                         </div>
                         <div>
