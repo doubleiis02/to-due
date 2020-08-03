@@ -7,3 +7,5 @@ A to-do list app where you can...
 - mark a task as "done" by crossing it off
 - delete all existing tasks off of the list
 
+\* works best on desktop \*
+
