@@ -25,7 +25,7 @@ class App extends React.Component {
 
   taskAdder = () => {
     if (this.state.openInput === false) {
-      return (<button className='imageicon' onClick={this.flipOpenInput}><img src={add}/></button>)
+      return (<button className='imageicon' onClick={this.flipOpenInput}><img src={add} alt='add'/></button>)
     } else {
       return (
         <div className='taskadder'>

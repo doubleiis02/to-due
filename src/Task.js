@@ -93,9 +93,9 @@ class Task extends React.Component {
 
     changeButton = () => {
         if (this.state.strike) {
-            return (<button className='imageicon' onClick={this.clickHandler}><img id='checked' src={checked}/></button>)
+            return (<button className='imageicon' onClick={this.clickHandler}><img id='checked' alt='' src={checked}/></button>)
         } else {
-            return (<button className='imageicon' onClick={this.clickHandler}><img id='blank' src={blank}/></button>)
+            return (<button className='imageicon' onClick={this.clickHandler}><img id='blank' alt='unchecked' src={blank}/></button>)
         }
     }
 
