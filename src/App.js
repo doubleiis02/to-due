@@ -1,9 +1,10 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Task from './Task.js';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import dateFormat from 'dateformat';
+import add from './Icons/add.png'
 
 class App extends React.Component {
   state = {
@@ -24,14 +25,18 @@ class App extends React.Component {
 
   taskAdder = () => {
     if (this.state.openInput === false) {
-      return (<button onClick={this.flipOpenInput}>add new task</button>)
+      return (<button className='imageicon' onClick={this.flipOpenInput}><img src={add}/></button>)
     } else {
       return (
-        <div>
-          <input value={this.state.currentInput} onChange={this.inputHandler} />
-          <DatePicker selected={this.state.currentDateObj} onChange={this.newDateHandler} />
-          <button onClick={this.submitHandler}>add task</button>
-          <button onClick={this.flipOpenInput}>cancel</button>
+        <div className='taskadder'>
+          <div>
+            <input placeholder='I have to...' className='inputbar' value={this.state.currentInput} onChange={this.inputHandler} />
+          </div>
+          <div className='taskaddericongroup'>
+            <DatePicker className='taskaddericon' id='datepicker' selected={this.state.currentDateObj} onChange={this.newDateHandler} />
+            <button className='taskaddericon' onClick={this.submitHandler}>add</button>
+            <button className='taskaddericon' onClick={this.flipOpenInput}>cancel</button>
+          </div>
         </div>
       )
     }
@@ -73,7 +78,7 @@ class App extends React.Component {
     dateObjCopy.splice(index, 1);
     this.setState({listOfDateObjs: dateObjCopy})
     let numCopy = this.state.listLength;
-    numCopy++;
+    numCopy--;
     this.setState({listLength: numCopy})
   }
 
@@ -98,25 +103,22 @@ class App extends React.Component {
         <header className="App-header">
 
           <h1>To-Due</h1>
-
-          {this.deleteAllTasksButton()}
-
-          {
-            this.state.listOfTasks.map((task, index) => {
-              // for every 'task' in list, return a Task with content 'task' and key 'index'
-              return <Task content={task} key={index} date={this.state.listOfDates[index]} dateObj={this.state.listOfDateObjs[index]} deleteFunc = {() => {this.deleteTask(index)}} />
-            })
-          }
-
-          {this.taskAdder()}
-
-          {/* <input 
-            value={this.state.currentInput}
-            onChange={this.inputHandler}
-          />
-
-          <button onClick={this.submitHandler}>add task</button> */}
-
+          <div className='body'>
+            <div className='row'>
+              {this.deleteAllTasksButton()}
+            </div>
+            <div className='row'>
+              {
+                this.state.listOfTasks.map((task, index) => {
+                  // for every 'task' in list, return a Task with content 'task' and key 'index'
+                  return <Task content={task} key={index} date={this.state.listOfDates[index]} dateObj={this.state.listOfDateObjs[index]} deleteFunc = {() => {this.deleteTask(index)}} />
+                })
+              }
+            </div>
+            <div className='row'>
+              {this.taskAdder()}
+            </div>
+          </div>
         </header>
       </div>
     );

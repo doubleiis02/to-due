@@ -2,6 +2,8 @@ import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import dateFormat from 'dateformat';
+import blank from './Icons/blank.png'
+import checked from './Icons/checked.png'
 
 class Task extends React.Component {
     state = {
@@ -54,31 +56,65 @@ class Task extends React.Component {
     editName = () => {
         if (this.state.editing) {
             return (
-                <div>
-                    <input value={this.state.currentInput} onChange={this.inputHandler} />
-                    <DatePicker selected={this.state.currentDateObj} onChange={this.dateHandler} />
-                    <button onClick={this.submitHandler}>save</button>
-                    <button onClick={this.switchEditingMode}>cancel</button>
+                <div className='inputandeditbuttons'>
+                    <div className='editinput'>
+                        <input value={this.state.currentInput} onChange={this.inputHandler} />
+                    </div>
+                    <div className='editbuttons'>
+                        <DatePicker id='datepicker' selected={this.state.currentDateObj} onChange={this.dateHandler} />
+                        <button onClick={this.submitHandler}>save</button>
+                        <button onClick={this.switchEditingMode}>cancel</button>
+                    </div>
                 </div>
             )
         } else {
             return (
-                <div>
-                    {this.strikethrough()}
-                    Due {this.state.duedate}
-                    <button onClick={this.switchEditingMode}>edit</button>
+                <div className='content'>
+                    <div>
+                        <div className='contenttext'>
+                            {this.strikethrough()}
+                        </div>
+                        <div>
+                            Due {this.state.duedate}
+                        </div>
+                    </div>
                 </div>
             )
         }
     }
 
+    editButton = () => {
+        if (this.state.editing) {
+            return;
+        } else {
+            return (<button onClick={this.switchEditingMode}>edit</button>)
+        }
+    }
+
+    changeButton = () => {
+        if (this.state.strike) {
+            return (<button className='imageicon' onClick={this.clickHandler}><img id='checked' src={checked}/></button>)
+        } else {
+            return (<button className='imageicon' onClick={this.clickHandler}><img id='blank' src={blank}/></button>)
+        }
+    }
+
     render = () => {
         return (
-            <div class='task'>
+            <div className='task'>
                 <div>
-                    <button onClick={this.clickHandler}>◯</button>
-                    {this.editName()}
-                    <button onClick = {this.props.deleteFunc}>delete task</button>
+                    <div className='buttonandcontent'>
+                        <div>
+                            {this.changeButton()}
+                        </div>
+                        <div>
+                            {this.editName()}
+                        </div>
+                        <div>
+                            {this.editButton()}
+                            <button onClick = {this.props.deleteFunc}>delete</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

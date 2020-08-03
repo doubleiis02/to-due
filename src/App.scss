@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.App {
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  background-color: white;
+}
+
+.body {
+  margin-top: 15px;
+  width: 80%;
+  max-width: 700px;
+}
+
+.row {
+  margin-bottom: 30px;
+}
+
+button {
+  font-family: 'Rubik', sans-serif;
+  border: 1px black solid;
+  border-radius: 5%;
+  margin: 5px;
+  font-size: 25px;
+  background-color: white;
+}
+
+.imageicon {
+  border-radius: 50%;
+  padding: 0px;
+  outline: none;
+  border: 0;
+}
+
+.imageicon img {
+  width: 50px;
+}
+
+#blank {
+  width: 35px;
+}
+
+#checked {
+  width: 35px;
+}
+
+.taskadder {
+  padding: 20px;
+  padding-bottom: 15px;
+  border: 2px solid #b4b4b4;
+  display: flex;
+  flex-direction: column;
+  min-height: 75px;
+  font-size: 20px;
+  min-width: 300px;
+}
+
+.inputbar {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#datepicker {
+  width: 9ch;
+  font-size: 25px;
+}
+
+.taskaddericon {
+  margin: 10px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.taskaddericongroup {
+  display: flex;
+  flex: row wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+input {
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 50px;
+  background-color: #006eff;
+  padding: 5px;
+  color: #ffee00;
+  width: 100%;
+  position: relative;
+  margin: 0;
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  width: 100%;
+}
+
+.task {
+  border: 2px solid #006eff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  min-width: 480px;
+}
+
+.buttonandcontent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+.contenttext {
+  font-size: 30px;
+  display: flex;
+  flex: row wrap;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex: column wrap;
+}
+
+.inputandeditbuttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editbuttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.editinput {
+  margin-bottom: 10px;
+}
